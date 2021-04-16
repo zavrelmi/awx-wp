@@ -1,0 +1,7 @@
+- name: hola mundo
+  hosts: all
+  tasks:
+    - name: mensaje
+      debug:
+        msg: "prueba hola mundo"
+        
