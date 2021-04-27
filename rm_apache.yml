@@ -1,8 +1,8 @@
--name: "Desinstalar apache"
+  
+- name: "Desinstalar apache"
   hosts: all
   tasks:
     - name: "Quitar paquete apache2"
-    apt: 
+       apt: 
       pkg: apache2
-      state: absent
-      
+      state: absent      
