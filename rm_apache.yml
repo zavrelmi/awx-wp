@@ -3,6 +3,5 @@
   hosts: all
   tasks:
     - name: "Quitar paquete apache2"
-       apt: 
-      pkg: apache2
+       apt: name = apache2
       state: absent      
