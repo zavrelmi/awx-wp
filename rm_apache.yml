@@ -1,4 +1,3 @@
-  
 - name: "Desinstalar apache"
   hosts: all
   tasks:
