@@ -1,5 +1,5 @@
 - hosts: all
-- tasks:
+  tasks:
   - name: Instalar lista de paquetes de php
     apt:
       pkg:
