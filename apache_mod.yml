@@ -7,8 +7,8 @@
     - name:  activar modulo rewrite
       apache2_module: name=rewrite state=present
       notify:
-        - reinicio de apache
+        - restart apache
 # asi se reinicia un servicio
   handlers:
-    - name: reinicio apache
+    - name: restart apache
       service: name=apache2 state=restarted
