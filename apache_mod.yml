@@ -1,0 +1,14 @@
+- hosts: all
+  # sudo: yes
+  tasks:
+    - name: instalar apache2
+      apt: name=apache2 update_cache=yes state=latest
+# asi podemos instalar activar modulos en apache
+    - name:  activar modulo rewrite
+      apache2_module: name=rewrite state=present
+      notify:
+        - reinicio de apache
+# asi se reinicia un servicio
+  handlers:
+    - name: reinicio apache
+      service: name=apache2 state=restarted
