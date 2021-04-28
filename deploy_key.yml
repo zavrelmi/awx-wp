@@ -1,11 +1,11 @@
-- name: Take authorized keys of user ansible
-  ansible.posix.authorized_key:
+- name: Injectar claves desde un directorio
+  authorized_key:
     user: ansible
     state: present
     key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
 
-- name: Deploy authorized keys from zavrelmi github
-  ansible.posix.authorized_key:
+- name: Injectar claves desde un repositorio
+  authorized_key:
     user: ansible
     state: present
-    key: https://github.com/zavrelmi/awx-wp/auth.keys
+    key: https://raw.githubusercontent.com/zavrelmi/awx-wp/main/auth.keys
