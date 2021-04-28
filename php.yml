@@ -13,7 +13,18 @@
       - php-xml 
       - php-xmlrpc
       - php-zip
+      
+   # creamos archivo php.ini
+  - name: Creando php.ini
+    copy:
+      dest: "/var/www/php.ini"
+      content: |
+        <?php
+        phpinfo();
+        ?>
    # reiniciamos apache
   handlers:
   - name: reinicio apache
     service: name=apache2 state=restarted
+    
+    
