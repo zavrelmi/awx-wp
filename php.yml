@@ -1,0 +1,17 @@
+- name: Instalar lista de paquetes de php
+  apt:
+    pkg:
+    - php 
+    - php-mysql 
+    - php-curl
+    - php-gd 
+    - php-intl 
+    - php-mbstring 
+    - php-soap 
+    - php-xml 
+    - php-xmlrpc
+    - php-zip
+   # reiniciamos apache
+  handlers:
+  - name: reinicio apache
+    service: name=apache2 state=restarted
