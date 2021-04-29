@@ -13,7 +13,10 @@
       - php-xml 
       - php-xmlrpc
       - php-zip
-   
+      
+   notify:
+    - restart apache2
+    
    # creamos archivo phpinfo.php
   - name: Creando php.ini
     copy:
@@ -22,8 +25,7 @@
         <?php
         phpinfo();
         ?>
-    notify:
-    - restart apache2
+    
    # reiniciamos apache
   handlers:
   - name: restart apache2
