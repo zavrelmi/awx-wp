@@ -13,8 +13,8 @@
       - php-xml 
       - php-xmlrpc
       - php-zip
-     notify:
-       - reinicio apache
+    notify:
+      - reinicio apache
    # creamos archivo phpinfo.php
   - name: Creando php.ini
     copy:
