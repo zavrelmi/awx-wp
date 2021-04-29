@@ -14,7 +14,7 @@
       - php-xmlrpc
       - php-zip
       
-   # creamos archivo php.ini
+   # creamos archivo phpinfo.php
   - name: Creando php.ini
     copy:
       dest: "/var/www/html/phpinfo.php"
