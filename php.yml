@@ -17,7 +17,7 @@
    # creamos archivo php.ini
   - name: Creando php.ini
     copy:
-      dest: "/var/www/php.ini"
+      dest: "/var/www/html/php.ini"
       content: |
         <?php
         phpinfo();
