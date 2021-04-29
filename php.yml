@@ -14,8 +14,8 @@
       - php-xmlrpc
       - php-zip
       
-   notify:
-    - restart apache2
+    notify:
+      - restart apache2
     
    # creamos archivo phpinfo.php
   - name: Creando php.ini
