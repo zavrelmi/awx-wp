@@ -14,7 +14,7 @@
       - php-xmlrpc
       - php-zip
     notify:
-      - reinicio apache
+      - restart apache2
    # creamos archivo phpinfo.php
   - name: Creando php.ini
     copy:
@@ -25,7 +25,7 @@
         ?>
    # reiniciamos apache
   handlers:
-  - name: reinicio apache
+  - name: restart apache2
     service: name=apache2 state=restarted
     
     
