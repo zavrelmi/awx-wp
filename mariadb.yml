@@ -5,13 +5,16 @@
       apt:
         name:
           - mariadb-server
-          #- python3-PyMySQL
         state: latest
     - name: start mariadb
       service:
         name: mariadb
         enabled: true
         state: started
+        
+    - name: isntalar dependencia para poder operar base de datos    
+      pip: name=MySQL-python
+      
     - name: cambio de contraseña de root
       mysql_user:
         login_user: root
