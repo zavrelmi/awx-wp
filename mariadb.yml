@@ -1,0 +1,43 @@
+- name: MariaDB
+  hosts: all
+  vars:
+    maria_contrasena: "M1asix@1"
+  tasks:
+    - name: instalar mariadb
+      apt:
+        name:
+          - mariadb-server
+          - python3-PyMySQL
+        state: latest
+    - name: start mariadb
+      service:
+        name: mariadb
+        enabled: true
+        state: started
+    - name: cambio de contraseña de root
+      mysql_user:
+        login_user: root
+        login_password: "{{ maria_contrasena }}"
+        user: root
+        check_implicit_admin: true
+        password: "{{ maria_contrasena }}"
+        host: localhost
+        
+     - name: creamos base de datos llamada wordpress
+       mysql_db: name=wordpress state=present login_user=root login_password="{{ maria_contrasena }}"    
+        
+    - name: creamos usuario usuariwp y le damos los privilegios para la base de datos
+      community.mysql.mysql_user:
+      name: usuariwp
+      password: M1asix@1
+      priv: 'wordpress.*:localhost'
+      state: present
+      
+    - name: quitamos el usuario root remoto 
+      mysql_user:
+        check_implicit_admin: true
+        login_user: root
+        login_password: "{{ maria_contrasena }}"
+        user: root
+        host: "{{ ansible_fqdn }}"
+        state: absent
