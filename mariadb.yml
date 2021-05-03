@@ -13,7 +13,7 @@
         state: started
         
     - name: isntalar dependencia para poder operar base de datos    
-      pip3: name=MySQL-python
+      pip: name=MySQL-python
       
     - name: cambio de contraseña de root
       mysql_user:
