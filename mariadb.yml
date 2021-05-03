@@ -36,7 +36,7 @@
         login_password: "{{ maria_contrasena }}"
         name: usuariwp
         password: "{{ wp_contrasena }}"
-        priv: 'wordpress.*:localhost'
+        priv: 'wordpress.localhost:ALL'
         state: present
       
     - name: quitamos el usuario root remoto 
