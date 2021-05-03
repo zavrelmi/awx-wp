@@ -12,7 +12,8 @@
         enabled: true
         state: started
         
-    - name: isntalar dependencia para poder operar base de datos    
+    - name: isntalar dependencia para poder operar base de datos
+      apt: name=python-pip
       pip: name=MySQL-python
       
     - name: cambio de contraseña de root
