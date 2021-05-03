@@ -1,7 +1,5 @@
 - name: MariaDB
   hosts: all
-  vars:
-    maria_contrasena: "M1asix@1"
   tasks:
     - name: instalar mariadb
       apt:
@@ -29,7 +27,7 @@
     - name: creamos usuario usuariwp y le damos los privilegios para la base de datos
       community.mysql.mysql_user:
       name: usuariwp
-      password: M1asix@1
+      password: "{{ wp_contrasena }}"
       priv: 'wordpress.*:localhost'
       state: present
       
