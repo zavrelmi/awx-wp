@@ -21,8 +21,8 @@
         password: "{{ maria_contrasena }}"
         host: localhost
         
-     - name: creamos base de datos llamada wordpress
-       mysql_db: name=wordpress state=present login_user=root login_password="{{ maria_contrasena }}"    
+    - name: creamos base de datos llamada wordpress
+      mysql_db: name=wordpress state=present login_user=root login_password="{{ maria_contrasena }}"    
         
     - name: creamos usuario usuariwp y le damos los privilegios para la base de datos
       community.mysql.mysql_user:
