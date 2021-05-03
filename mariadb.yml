@@ -26,10 +26,10 @@
         
     - name: creamos usuario usuariwp y le damos los privilegios para la base de datos
       community.mysql.mysql_user:
-      name: usuariwp
-      password: "{{ wp_contrasena }}"
-      priv: 'wordpress.*:localhost'
-      state: present
+        name: usuariwp
+        password: "{{ wp_contrasena }}"
+        priv: 'wordpress.*:localhost'
+        state: present
       
     - name: quitamos el usuario root remoto 
       mysql_user:
