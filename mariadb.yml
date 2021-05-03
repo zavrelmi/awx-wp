@@ -32,6 +32,8 @@
         
     - name: creamos usuario usuariwp y le damos los privilegios para la base de datos
       mysql_user:
+        login_user: root
+        login_password: "{{ maria_contrasena }}"
         name: usuariwp
         password: "{{ wp_contrasena }}"
         priv: 'wordpress.*:localhost'
