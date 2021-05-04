@@ -1,5 +1,5 @@
--name: descargar y ubicar wordpress
- hosts: all
+
+-hosts: all
  tasks:
   -name: Cambiamos ubicacion de index.html por defecto
    file:
