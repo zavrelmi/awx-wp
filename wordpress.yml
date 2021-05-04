@@ -1,0 +1,19 @@
+-name: descargar y ubicar wordpress
+ hosts: ALL
+ tasks:
+  -name: Cambiamos ubicacion de index.html por defecto
+   file:
+    src: '/var/www/html/index.html'
+    dest: '/var/www/html/index.html_old'
+    state: link
+    
+   
+  -name: Desenpaquetar wordpress saltando nos la parte de descargarlo
+   unarchive:
+   src: https://wordpress.org/latest.tar.gz
+   dest: "/var/www/html"
+   remote_src: yes
+   creates: "/var/www/html"
+   
+   
+   
