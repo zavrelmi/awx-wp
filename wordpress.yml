@@ -4,7 +4,8 @@
     file:
      src: '/var/www/html/index.html'
      dest: '/var/www/html/index.html_old'
-     state: link
+     state: file
+   
   - name: Desenpaquetar wordpress saltando nos la parte de descargarlo
     unarchive:
       src: https://wordpress.org/latest.tar.gz
