@@ -15,6 +15,7 @@
       dest: "/var/www/html"
       remote_src: yes
       owner: root
+      group: root
       extra_opts: 
       - --strip-components=1
    
