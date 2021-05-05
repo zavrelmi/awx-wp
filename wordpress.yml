@@ -6,9 +6,8 @@
      dest: '/var/www/html/index.html_old'
      state: hard
   - name: Borrar archivo original
-    file:
-      patch: /var/www/html/index.html
-      state: absent
+    shell: "rm /var/www/html/index.html"
+      
    
   - name: Desenpaquetar wordpress saltando nos la parte de descargarlo
     unarchive:
