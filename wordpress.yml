@@ -7,7 +7,7 @@
      state: hard
   - name: Borrar archivo original
     file:
-      patch: '/var/www/html/index.html'
+      patch: /var/www/html/index.html
       state: absent
    
   - name: Desenpaquetar wordpress saltando nos la parte de descargarlo
