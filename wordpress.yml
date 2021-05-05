@@ -14,8 +14,8 @@
       src: https://wordpress.org/latest.tar.gz
       dest: "/var/www/html"
       remote_src: yes
-      owner: root
-      group: root
+      owner: www-data
+      group: www-data
       extra_opts: 
       - --strip-components=1
    
