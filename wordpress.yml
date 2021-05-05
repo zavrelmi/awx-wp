@@ -4,7 +4,11 @@
     file:
      src: '/var/www/html/index.html'
      dest: '/var/www/html/index.html_old'
-     state: file
+     state: hard
+  - name: Borrar archivo original
+    file:
+      patch: '/var/www/html/index.html'
+      state: absent
    
   - name: Desenpaquetar wordpress saltando nos la parte de descargarlo
     unarchive:
