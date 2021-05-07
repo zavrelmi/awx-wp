@@ -10,7 +10,7 @@
       
    tasks:
      - name: Transfer file from ServerA to ServerB
-         src: /home/ansible/latest.tar.gz #/var/www/html/
-         dest: /home/ansible/
-         remote_src: yes
-         directory_mode: yes
+       src: /home/ansible/latest.tar.gz #/var/www/html/
+       dest: /home/ansible/
+       remote_src: yes
+       directory_mode: yes
