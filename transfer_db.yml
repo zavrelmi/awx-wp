@@ -1,8 +1,8 @@
-- hosts: madre.zavrel.cat
+- hosts: 10.0.125.73
   gather_facts: true
   vars: 
     maria_contrasena: M1asix@1
-    deploy_host: 192.168.0.32
+    deploy_host: 10.0.125.72
  # vars_prompt:
   #- name: deploy_host
    # prompt: direcion de host para hacer la subida de base de datos?
@@ -16,7 +16,7 @@
      target: /tmp/backup.sql
      login_user: root
      login_password: "{{ maria_contrasena }}"
-  - name: start the importing
+  - name: importar base de datos
     mysql_db:
      name: restoredb
      state: import
