@@ -1,6 +1,6 @@
 - hosts: ALL
   gather_facts: true
-  - vars: 
+  vars: 
     maria_contrasena: M1asix@1
     deploy_host: 192.168.0.32
  # vars_prompt:
