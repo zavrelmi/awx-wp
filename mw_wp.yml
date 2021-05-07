@@ -12,7 +12,7 @@
      - name: Transfer file from ServerA to ServerB
        synchronize:
          src: /var/www/html/
-         dest: ~/
+         dest: /home/ansible/
          mode: pull
          owner: yes
          group: yes
