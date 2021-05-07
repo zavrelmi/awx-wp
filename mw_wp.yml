@@ -1,4 +1,4 @@
- - hosts: ALL
+ - hosts: madre.zavrel.cat
    gather_facts: true
    vars:
      deploy_host: 192.168.0.32
