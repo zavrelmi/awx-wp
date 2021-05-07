@@ -1,9 +1,17 @@
-  
-- hosts: ALL
-  gather_facts: true
-  
-  - name: If follow=yes, /path/to/file will be overwritten by contents of foo.conf
-    ansible.builtin.copy:
-      src: /etc/foo.conf
-      dest: /path/to/link  # link to /path/to/file
-      follow: yes
+ - hosts: ALL
+   gather_facts: true
+   vars_prompt:
+    - name: deploy_host
+      prompt: direcion de host para hacer la subida de base de datos?
+      private: no 
+      
+   tasks:
+     - name: Transfer file from ServerA to ServerB
+       synchronize:
+         src: /var/www/html/
+         dest: /var/www/html/
+         mode: pull
+         owner: yes
+         group: yes
+         recursive: yes
+       delegate_to: "{{ deply_host }}"
