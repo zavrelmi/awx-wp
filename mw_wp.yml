@@ -1,7 +1,7 @@
- - hosts: 10.0.125.73
+ - hosts: 10.0.125.72
    gather_facts: true
    vars:
-     deploy_host: 10.0.125.72
+     deploy_host: 10.0.125.73
    
    #vars_prompt:
     #- name: deploy_host
