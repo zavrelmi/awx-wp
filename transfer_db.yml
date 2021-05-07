@@ -21,6 +21,6 @@
      name: restoredb
      state: import
      target: /tmp/backup.sql
-     login_host: "{{ deply_host }}"
+     login_host: "{{ deploy_host }}"
      login_user: root
      login_password: "{{ maria_contrasena }}"   
