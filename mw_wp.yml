@@ -12,7 +12,7 @@
      - name: Transfer file from ServerA to ServerB
        synchronize:
          src: /var/www/html/
-         dest: //var/www/html/
+         dest: ~/
          mode: pull
          owner: yes
          group: yes
