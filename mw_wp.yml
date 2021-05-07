@@ -11,7 +11,7 @@
    tasks:
      - name: Transfer file from ServerA to ServerB
        synchronize:
-         src: /var/www/html/
+         src: /home/ansible/ #/var/www/html/
          dest: /home/ansible/
          mode: pull
          owner: yes
