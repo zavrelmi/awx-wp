@@ -1,7 +1,7 @@
- - hosts: 10.0.125.72
+ - hosts: 10.0.125.73
    gather_facts: true
    vars:
-     deploy_host: 10.0.125.73
+     deploy_host: 10.0.125.72
    
    #vars_prompt:
     #- name: deploy_host
@@ -12,7 +12,7 @@
      - name: Transfer file from ServerA to ServerB
        synchronize:
          src: /var/www/html/
-         dest: /var/www/html/
+         dest: //var/www/html/
          mode: pull
          owner: yes
          group: yes
