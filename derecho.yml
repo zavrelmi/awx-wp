@@ -1,0 +1,7 @@
+- hosts: 10.0.125.72
+  tasks:
+  - name: cambiar para aceso remoto
+    replace:
+      path: /etc/mysql/mariadb.conf.d/50-server.cnf
+      regexp: '127.0.0.1'
+      replace: "0.0.0.0"
