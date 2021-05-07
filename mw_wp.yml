@@ -1,0 +1,9 @@
+  
+- hosts: ALL
+  gather_facts: true
+  
+  - name: If follow=yes, /path/to/file will be overwritten by contents of foo.conf
+    ansible.builtin.copy:
+      src: /etc/foo.conf
+      dest: /path/to/link  # link to /path/to/file
+      follow: yes
