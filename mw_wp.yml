@@ -10,7 +10,7 @@
       
    tasks:
      - name: Transfer file from ServerA to ServerB
-       ansible.builtin.copy:
          src: /home/ansible/latest.tar.gz #/var/www/html/
-         dest: 10.0.125.72:/home/ansible/
-
+         dest: /home/ansible/
+         remote_src: yes
+         directory_mode: yes
