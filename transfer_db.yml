@@ -22,5 +22,5 @@
      state: import
      target: /tmp/backup.sql
      login_host: "{{ deploy_host }}"
-     login_user: root
+     login_user: admin
      login_password: "{{ maria_contrasena }}"   
