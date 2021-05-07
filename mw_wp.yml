@@ -10,11 +10,7 @@
       
    tasks:
      - name: Transfer file from ServerA to ServerB
-       synchronize:
-         src: rsync://home/ansible/latest.tar.gz #/var/www/html/
-         dest: /home/ansible/
-         mode: pull
-         owner: yes
-         group: yes
-         recursive: yes
-       delegate_to: "{{ deploy_host }}"
+       ansible.builtin.copy:
+         src: /home/ansible/latest.tar.gz #/var/www/html/
+         dest: "{{ deploy_host }}"/home/ansible/
+
