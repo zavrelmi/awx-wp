@@ -1,4 +1,4 @@
-- hosts: ALL
+- hosts: madre.zavrel.cat
   gather_facts: true
   vars: 
     maria_contrasena: M1asix@1
