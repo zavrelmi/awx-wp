@@ -1,6 +1,6 @@
 - hosts: ALL
   gather_facts: true
-  var: 
+  vars: 
     maria_contrasena: M1asix@1
     
   vars_prompt:
