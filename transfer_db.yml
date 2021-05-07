@@ -18,7 +18,7 @@
      login_password: "{{ maria_contrasena }}"
   - name: importar base de datos
     mysql_db:
-     name: restoredb
+     name: wordpress
      state: import
      target: /tmp/backup.sql
      login_host: "{{ deploy_host }}"
