@@ -11,7 +11,7 @@
    tasks:
      - name: Transfer file from ServerA to ServerB
        synchronize:
-         src: /var/www/html/
+         src: /var/www/html/*
          dest: /var/www/html/
          mode: pull
          owner: yes
