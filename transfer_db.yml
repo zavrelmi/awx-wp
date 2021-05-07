@@ -1,27 +1,26 @@
-- hosts: ALL
+- hosts: 10.0.125.73
   gather_facts: true
-  var: 
+  vars: 
     maria_contrasena: M1asix@1
-    
-  vars_prompt:
-  - name: deploy_host
-    prompt: direcion de host para hacer la subida de base de datos?
-    private: no
+    deploy_host: 10.0.125.72
+ # vars_prompt:
+  #- name: deploy_host
+   # prompt: direcion de host para hacer la subida de base de datos?
+    #private: no
 
   tasks:
-     - name: guardar base de datos
-       mysql_db:
-        name: wordpress
-        state: dump
-        target: /tmp/backup.sql
-        login_user: root
-        login_password: "{{ maria_contrasena }}"
-        
-      - name: start the importing
-        mysql_db:
-         name: restoredb
-         state: import
-         target: /tmp/backup.sql
-         login_host: "{{ deply_host }}"
-         login_user: root
-         login_password: "{{ maria_contrasena }}"   
+  - name: guardar base de datos
+    mysql_db:
+     name: wordpress
+     state: dump
+     target: /tmp/backup.sql
+     login_user: root
+     login_password: "{{ maria_contrasena }}"
+  - name: importar base de datos
+    mysql_db:
+     name: restoredb
+     state: import
+     target: /tmp/backup.sql
+     login_host: "{{ deploy_host }}"
+     login_user: admin
+     login_password: "{{ maria_contrasena }}"   

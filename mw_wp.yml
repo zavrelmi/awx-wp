@@ -1,9 +1,16 @@
-  
-- hosts: ALL
-  gather_facts: true
-  
-  - name: If follow=yes, /path/to/file will be overwritten by contents of foo.conf
-    ansible.builtin.copy:
-      src: /etc/foo.conf
-      dest: /path/to/link  # link to /path/to/file
-      follow: yes
+ - hosts: 10.0.125.73
+   gather_facts: true
+   vars:
+     deploy_host: 10.0.125.72
+   
+   #vars_prompt:
+    #- name: deploy_host
+     # prompt: direcion de host para hacer la subida de base de datos?
+      #private: no 
+      
+   tasks:
+   - name: Transfer file from ServerA to ServerB
+       src: "/home/ansible/latest.tar.gz" #/var/www/html/
+       dest: "/home/ansible/"
+       remote_src: yes
+       directory_mode: yes
