@@ -1,6 +1,6 @@
 - name: MariaDB
   hosts: all
-  #-var: 
+  #-vars: 
     #maria_contrasena: M1asix@1
     #wp_contrasena: M1asix@1
   tasks:
