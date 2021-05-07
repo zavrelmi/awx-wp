@@ -1,9 +1,12 @@
  - hosts: ALL
    gather_facts: true
-   vars_prompt:
-    - name: deploy_host
-      prompt: direcion de host para hacer la subida de base de datos?
-      private: no 
+   - vars:
+     deploy_host: 192.168.0.32
+   
+   #vars_prompt:
+    #- name: deploy_host
+     # prompt: direcion de host para hacer la subida de base de datos?
+      #private: no 
       
    tasks:
      - name: Transfer file from ServerA to ServerB
