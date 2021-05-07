@@ -9,19 +9,18 @@
     private: no
 
   tasks:
-     - name: guardar base de datos
-       mysql_db:
-        name: wordpress
-        state: dump
-        target: /tmp/backup.sql
-        login_user: root
-        login_password: "{{ maria_contrasena }}"
-        
-      - name: start the importing
-        mysql_db:
-         name: restoredb
-         state: import
-         target: /tmp/backup.sql
-         login_host: "{{ deply_host }}"
-         login_user: root
-         login_password: "{{ maria_contrasena }}"   
+  - name: guardar base de datos
+    mysql_db:
+     name: wordpress
+     state: dump
+     target: /tmp/backup.sql
+     login_user: root
+     login_password: "{{ maria_contrasena }}"
+   - name: start the importing
+     mysql_db:
+      name: restoredb
+      state: import
+      target: /tmp/backup.sql
+      login_host: "{{ deply_host }}"
+      login_user: root
+      login_password: "{{ maria_contrasena }}"   
