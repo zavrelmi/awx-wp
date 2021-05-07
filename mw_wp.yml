@@ -17,4 +17,4 @@
          owner: yes
          group: yes
          recursive: yes
-       delegate_to: "{{ deply_host }}"
+       delegate_to: "{{ deploy_host }}"
