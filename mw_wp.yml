@@ -1,19 +1,20 @@
- - hosts: 10.0.125.73
+ - hosts: all
    gather_facts: true
    vars:
      deploy_host: 10.0.125.72
+     source_host:
    
    #vars_prompt:
     #- name: deploy_host
      # prompt: direcion de host para hacer la subida de base de datos?
       #private: no 
-      
+     
    tasks:
-   - name: Copy wordpress to remote host
-   become: true
-    copy:
-     src: "/home/ansible/latest.tar.gz"
-     dest: /tmp/migrate_wp.tar.gz
-     owner: root
-     group: root
-     mode: 0600
+     - name: Buscamos el archivo en la maquina base
+       run_once: yes
+       fetch: src=/tmp/app01-to-app02.jar dest=buffer/ flat=yes
+       when: "{{ inventory_hostname == "{{ source_host }}" }}"
+
+     - name: Injectamos el archivo a la maquina destinacion
+       copy: src=buffer/app01-to-app02.jar dest=/tmp/
+       when: "{{ inventory_hostname == '{{ deploy_host }}' }}"
