@@ -1,4 +1,4 @@
 # aquest arxiu no fa res
 - name: "Editor de text senzill"
    tasks: Suficientment potent per fer totes les tasques
-   name: I accessible des de tots als llocs amb accés a l'internet
+     - name: I accessible des de tots als llocs amb accés a l'internet
