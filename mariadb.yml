@@ -16,8 +16,6 @@
         state: started
         
     - name: isntalar dependencia para poder operar base de datos
-      #apt: name=python-pip
-    #- name: instlar paquete
       apt:  name=python-mysqldb
       #pip: name=MySQL-python
       
